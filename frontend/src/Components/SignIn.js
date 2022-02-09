@@ -14,7 +14,7 @@ export default function SignIn() {
 
 	const PostData = () => {
 		if (!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
-			// M.toast({ html: "invalid email", classes: "#c62828 red darken-3" })
+			alert("Wrong username or password!")
 			return
 		}
 
@@ -30,13 +30,11 @@ export default function SignIn() {
 		}).then(res => res.json())
 			.then(data => {
 				if (data.error) {
-					//M.toast({ html: data.error, classes: "#c62828 red darken-3" })
+	               alert("Wrong username or password")
 				}
 				else {
-					//M.toast({ html: data.message, classes: "#43a047 green darken-1" })
 					localStorage.setItem("jwt", data.token);
 					localStorage.setItem("user", JSON.stringify(data.user));
-					// dispatch({ type: "USER", payload: data.user })
 					history('/mainpage');
 				}
 			}).catch(err => {

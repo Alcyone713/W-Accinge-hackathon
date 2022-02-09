@@ -4,7 +4,7 @@ import "./signup.css";
 // import M from 'materialize-css';
 
 
-export default function Signup() {
+export default function SignUp() {
     const [name, setName] = useState("")
     const [password, setPasword] = useState("")
     const [email, setEmail] = useState("")
@@ -13,7 +13,7 @@ export default function Signup() {
     const history = useNavigate();
     const PostData = () => {
         if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
-            // M.toast({html: "invalid email",classes:"#c62828 red darken-3"})
+            alert("Please enter a valid email")
             return
         }
 
@@ -42,7 +42,7 @@ export default function Signup() {
     }
 
     return <div>
-        <div className="containerX">
+        <div>
             <div className="content">
                 <form action="#">
                     <div className="user-details">

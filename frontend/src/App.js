@@ -12,11 +12,7 @@ import {
 import LandingPage from './Components/LandingPage';
 import MainPage from './Components/MainPage';
 import Donate from './Components/Donate';
-// import MediaFeed from './components/MediaFeed';
-// import SideNav from './components/SideNav';
-// import MainPage from './components/MainPage';
-// import CreatePost from './components/CreatePost';
-
+import About from './Components/About';
 
 
 const Routing =()=>{
@@ -31,6 +27,8 @@ const Routing =()=>{
             <Route path="signup" element={<SignUp />}>
             </Route>
             <Route path="donate" element={<Donate />}>
+            </Route>
+            <Route path="about" element={<About />}>
             </Route>
   </Routes>
   )

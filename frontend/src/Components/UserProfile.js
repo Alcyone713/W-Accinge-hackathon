@@ -40,25 +40,7 @@ const Profile  = ()=>{
                    <div style={{display:"flex",justifyContent:"space-between",width:"108%"}}>
                        <h6>{userProfile.posts.length} posts</h6>
                    </div>
-                   {showfollow?
-                   <button style={{
-                       margin:"10px"
-                   }} className="btn waves-effect waves-light #64b5f6 blue darken-1"
-                    onClick={()=>followUser()}
-                    >
-                        Follow
-                    </button>
-                    : 
-                    <button
-                    style={{
-                        margin:"10px"
-                    }}
-                    className="btn waves-effect waves-light #64b5f6 blue darken-1"
-                    onClick={()=>unfollowUser()}
-                    >
-                        UnFollow
-                    </button>
-                    }
+                   
                    
                   
 

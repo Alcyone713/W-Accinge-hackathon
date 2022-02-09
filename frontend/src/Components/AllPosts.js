@@ -12,7 +12,7 @@ export default function AllPosts() {
             }
         }).then(res=>res.json())
         .then(result=>{
-            // console.log(result);
+            console.log(result);
             setData(result.posts);
         })
      },[])
@@ -27,7 +27,6 @@ export default function AllPosts() {
                   id={item._id}
                   image={item.photo}
                   body = {item.body}
-                //   postedBy = {item.postedBy.name}
                   city= {item.city}
                   />
                   </div>)

@@ -8,7 +8,7 @@ export default function Donate() {
     const [body, setBody] = useState("");
     const [image, setImage] = useState("");
     const [url, setUrl] = useState("");
-    const [name, setName]= useState("");
+    const [location, setLocation]= useState("");
 
     useEffect(()=>{
         if(url){
@@ -21,6 +21,7 @@ export default function Donate() {
                 body: JSON.stringify({
                     body,
                     pic:url,
+                    city:location
                 })
             }).then(res => res.json())
                 .then(data => {
@@ -60,14 +61,14 @@ export default function Donate() {
   
     return <div>
         <form className='form1'>
-            <h1>Donate</h1>
+            <h1>Show us what you donated!</h1>
             <div class="formcontainer">
                 <hr />
                 <div class="containerY">
                     <label><strong>Description</strong></label>
                     <input type="text" value={body} onChange={(event)=> setBody(event.target.value)}  placeholder="Add description" className='descriptionY'/>
-                    <label><strong>Location</strong></label>
-                    <input type="text" value={name} onChange={(event)=> setName(event.target.value)}  placeholder="Your name" className='descriptionY'/>
+                    <label><strong>Your name</strong></label>
+                    <input type="text" value={location} onChange={(event)=> setLocation(event.target.value)}  placeholder="Your name" className='descriptionY'/>
                     <label style={{marginRight: '10px'}}><strong>Add image</strong></label>
                     <input type="file" onChange={(event)=> setImage(event.target.files[0])} className='upload' required />
                 </div>
